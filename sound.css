@@ -1,0 +1,153 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    background: #1c1c1c;
+    overflow: hidden;
+}
+#container
+{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center; 
+}
+#options 
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    height: 150px;
+    border: #fff solid 2px;
+    border-radius: 30px;
+    /* bottom: 190px; */
+    bottom: -20%;
+    /* opacity: 0; */
+    transition: 0.3s;
+}
+#change
+{
+    display: flex;
+    justify-content: center;
+    width: 70px;
+    height: 30px;
+    border: #fff solid 2px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+#before , #after
+{
+    width: 14px;
+    height: 14px;
+    border: none;
+    border-right: #fff solid 2px;
+    border-top: #fff solid 2px;
+    transform: translateX(-3px) rotate(225deg);
+    margin: 6px;
+    cursor: pointer;
+}
+#after
+{
+    transform: translateX(3px) rotate(45deg);
+}
+#options.active
+{
+    transition: 0.3s;
+    bottom: 10%;
+    /* opacity: 1; */
+}
+#effects
+{
+    overflow: hidden;
+}
+/* ============================================ */
+.btn
+{
+    position: absolute;
+    bottom: 1%;
+    width: 30px;
+    height: 50px;
+    border: #fff solid 2px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
+.btn span
+{
+    background-color: #fff;
+    width: 5px;
+    height: 10px;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+.btn span::before
+{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-right: #fff solid 2px;
+    border-top: #fff solid 2px;
+    transform: translateY(-10px) rotate(315deg);
+    left: 7px;
+    margin-top: -10px;
+    opacity: 0;
+    animation: down 1.8s linear infinite;
+}
+.btn span::after
+{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-right: #fff solid 2px;
+    border-top: #fff solid 2px;
+    transform: translateY(-10px) rotate(315deg);
+    left: 7px;
+    margin-bottom: -10px;
+    opacity: 0;
+    animation: down 1.8s linear infinite;
+    animation-delay: 0.8s;
+}
+@keyframes down {
+    0%
+    {
+        margin-bottom: -10px;
+        opacity: 0;
+    }
+    50%
+    {
+        margin-bottom: -25px;
+        opacity: 1;
+    }
+    100%
+    {
+        margin-bottom: -40px;
+        opacity: 0;
+    }
+}
+input[type="file"] 
+{
+    margin: 5px;
+    font-size: 17px;
+    color: #fff;
+}
+#file-upload-button 
+{
+    color: #fff;
+    background-color: aqua;
+}

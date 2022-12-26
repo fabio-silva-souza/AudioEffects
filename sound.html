@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/audiovisul/sound.css">
+    <script src="/audiovisul/test.js" defer></script>
+    <title>Sound Visualizer</title>
+</head>
+<body>
+    <div id="container">
+        <canvas id="effects"></canvas>
+        <div id="options">
+           <div id="change">
+            <span id="before"></span>
+            <hr>
+            <span id="after"></span>
+           </div>
+           <input type="file" id="fileInput" accept="audio/*">
+            <br>
+            <audio id="sounds" controls></audio>
+        </div>
+    </div>
+    <div class="btn">
+        <span></span>
+    </div>
+    <script>
+        const btn = document.querySelector('.btn');
+        const options = document.getElementById('options');
+        
+        btn.addEventListener('click', function(){
+            options.classList.toggle('active');
+            console.log('eeee')
+        })
+    </script>
+</body>
+</html>
