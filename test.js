@@ -57,24 +57,25 @@ afterEffect.addEventListener('click', function(){
 nextEffect.addEventListener('click', function(){
    
 });
-function drawEffect(bufferLenght, x, barWidht, barHeight, dataArray){
 
-    for (let i = 0; i < bufferLenght; i++){
-        barHeight = dataArray[i] * 1.5;
-        ctx.save();
-        ctx.translate(canvas.width/2, canvas.height/2);
-        ctx.rotate(i + Math.PI * 8 / bufferLenght);
-        const hue = i * 15; //hsl hue,saturation,lightness
-        // ctx.fillStyle = 'blueviolet';
-        // ctx.fillRect(10, 5, barWidht/2, barHeight*2);
-        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-        ctx.fillRect(0, 0, barWidht, barHeight); //(8, 5, barWidht/2, barHeight*2)
-        x += barWidht;
-        ctx.restore();
-    }
-}
+// function drawEffect(bufferLenght, x, barWidht, barHeight, dataArray){
 
-//function drawEffect(bufferLenght, x, barWidht, barHeight, dataArray){
+//     for (let i = 0; i < bufferLenght; i++){
+//         barHeight = dataArray[i] * 1.5;
+//         ctx.save();
+//         ctx.translate(canvas.width/2, canvas.height/2);
+//         ctx.rotate(i + Math.PI * 8 / bufferLenght);
+//         const hue = i * 15; //hsl hue,saturation,lightness
+//         // ctx.fillStyle = 'blueviolet';
+//         // ctx.fillRect(10, 5, barWidht/2, barHeight*2);
+//         ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+//         ctx.fillRect(0, 0, barWidht, barHeight); //(8, 5, barWidht/2, barHeight*2)
+//         x += barWidht;
+//         ctx.restore();
+//     }
+// }
+
+// function drawEffect(bufferLenght, x, barWidht, barHeight, dataArray){
 //     for (let i = 0; i < bufferLenght; i++){
 //         barHeight = dataArray[i] * 1.5;
 //         ctx.save();

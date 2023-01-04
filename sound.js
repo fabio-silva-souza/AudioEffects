@@ -29,7 +29,7 @@ container.addEventListener('click' , function(){
 
     function animation(){
         let x = 0;
-        hue+=4;
+        hue+=0.05;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         analyser.getByteFrequencyData(dataArray);
         drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray);
@@ -75,19 +75,19 @@ file.addEventListener('change', function(){
 //     }
 // }
 
-// function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
-//     for (let i = 0; i < bufferLenght; i++){
-//         barHeight = dataArray[i] * 1.5;
-//         ctx.save();
-//         ctx.translate(canvas.width/2, canvas.height/2);
-//         ctx.rotate(i * Math.PI * 10 / bufferLenght);
-//         const hue = i * 2; //hsl hue,saturation,lightness 'i * 2'
-//         ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-//         ctx.fillRect(0, 0, barWidht, barHeight);//(5, 5, barWidht, barHeight)
-//         x += barWidht;
-//         ctx.restore();
-//     }
-// }
+function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
+    for (let i = 0; i < bufferLenght; i++){
+        barHeight = dataArray[i] * 1;
+        ctx.save();
+        ctx.translate(canvas.width/2, canvas.height/2);
+        ctx.rotate(i * Math.PI * 5 / bufferLenght);
+        const hue = i * 80; //hsl hue,saturation,lightness 'i * 2'
+        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        ctx.fillRect(0, 0, barWidht, -barHeight);//(5, 5, barWidht, barHeight)
+        // x += barWidht;
+        ctx.restore();
+    }
+}
 
 // function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
 //     for (let i = 0; i < bufferLenght; i++){
@@ -96,23 +96,15 @@ file.addEventListener('change', function(){
 //         // const green = i/2;
 //         // const blue = i * barHeight/20;
         
-//         ctx.fillStyle = 'hsl(' + hue + ', 100%, 50%)';
+//         ctx.fillStyle = 'hsl(' + hue + ', 100%, 70%)';
 //         ctx.beginPath();                    
-//         ctx.arc(x,  barHeight + 600, 20, 0, Math.PI * 2);
+//         ctx.arc(x,  barHeight + 480, 15, 0, Math.PI * 2);
 //         ctx.fill();
 //         // ctx.fillStyle = 'white';
 //         // ctx.fillRect(canvas.width/2 - x, canvas.height - barHeight - 30, barWidht, 15); 
 //         // ctx.fillStyle = 'rgb(' + red + ',' + green + ',' + blue + ')';
 //         // ctx.fillRect(canvas.width/2 - x, canvas.height - barHeight, barWidht, barHeight);
-//         x += barWidht;
-//     }
-//     for (let i = 0; i < bufferLenght; i++){
-//         barHeight = dataArray[i] * 2;
-//         ctx.fillStyle = 'hsl(' + hue + ', 100%, 50%)';
-//         ctx.beginPath();                    
-//         ctx.arc(x,  barHeight + 400, 20, 0, Math.PI * 2);
-//         ctx.fill();
-//         x += barWidht;
+//         x += barWidht * 5;
 //     }
 // }
 
@@ -125,25 +117,25 @@ file.addEventListener('change', function(){
 //         const hue = i * 6; //hsl hue,saturation,lightness 'i * 2'
 //         ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
 //         ctx.beginPath();                    
-//         ctx.arc(x,  -barHeight + 500, 20, 0, Math.PI * 4);
+//         ctx.arc(x,  barHeight + 100, 13, 3, Math.PI * 2);
+//         ctx.fill();
+//         x += barWidht * 5;
+//         ctx.restore();
+//     }
+// }
+
+// function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
+//     for (let i = 0; i < bufferLenght; i++){
+//         barHeight = dataArray[i] * 1.5;
+//         ctx.save();
+//         ctx.translate(canvas.width/2, canvas.height/2);
+//         ctx.rotate(i + Math.PI * 2 / bufferLenght);
+//         const hue = i * 2; //hsl hue,saturation,lightness 'i * 2'
+//         ctx.fillStyle = 'hsl(' + hue + ', 100%, 45%)';
+//         ctx.beginPath();                    
+//         ctx.arc(barWidht, barHeight, 15, 0, Math.PI * 2);//-x/4
 //         ctx.fill();
 //         x += barWidht;
 //         ctx.restore();
 //     }
 // }
-
-function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
-        for (let i = 0; i < bufferLenght; i++){
-            barHeight = dataArray[i] * 1.8;
-            ctx.save();
-            ctx.translate(canvas.width/2, canvas.height/2);
-            ctx.rotate(i + Math.PI * 2 / bufferLenght);
-            const hue = i * 80; //hsl hue,saturation,lightness 'i * 2'
-            ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-            ctx.beginPath();                    
-            ctx.arc(barWidht, barHeight, 20, 0, Math.PI * 2);//-x/4
-            ctx.fill();
-            x += barWidht;
-            ctx.restore();
-        }
-    }
