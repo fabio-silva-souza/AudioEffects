@@ -29,11 +29,11 @@ body
     align-items: center;
     flex-direction: column;
     width: 350px;
-    height: 150px;
+    height: 200px;
     border: #fff solid 2px;
     border-radius: 30px;
     /* bottom: 190px; */
-    bottom: -20%;
+    bottom: -40%;
     /* opacity: 0; */
     transition: 0.3s;
 }
@@ -42,10 +42,20 @@ body
     display: flex;
     justify-content: center;
     width: 70px;
-    height: 30px;
     border: #fff solid 2px;
     border-radius: 30px;
     margin-top: 10px;
+}
+ul
+{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    list-style: none;
+}
+ul li
+{
+    border: 1px solid #fff;
 }
 #before , #after
 {
