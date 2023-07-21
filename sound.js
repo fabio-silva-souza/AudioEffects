@@ -77,19 +77,19 @@ file.addEventListener('change', function(){
 //     }
 // }
 
-// function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
-//     for (let i = 0; i < bufferLenght; i++){
-//         barHeight = dataArray[i] * 1.4;
-//         ctx.save();
-//         ctx.translate(canvas.width/2, canvas.height/2);
-//         ctx.rotate(i * Math.PI * 5 / bufferLenght);
-//         const hue = i * 80; //hsl hue,saturation,lightness 'i * 2'
-//         ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
-//         ctx.fillRect(0, 0, barWidht, -barHeight);//(5, 5, barWidht, barHeight)
-//         // x += barWidht;
-//         ctx.restore();
-//     }
-// }
+function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
+    for (let i = 0; i < bufferLenght; i++){
+        barHeight = dataArray[i] * 1.4;
+        ctx.save();
+        ctx.translate(canvas.width/2, canvas.height/2);
+        ctx.rotate(i * Math.PI * 5 / bufferLenght);
+        const hue = i * 80; //hsl hue,saturation,lightness 'i * 2'
+        ctx.fillStyle = 'hsl(' + hue + ',100%, 50%)';
+        ctx.fillRect(0, 0, barWidht, -barHeight);//(5, 5, barWidht, barHeight)
+        // x += barWidht;
+        ctx.restore();
+    }
+}
 
 // function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
 //     for (let i = 0; i < bufferLenght; i++){
@@ -142,22 +142,11 @@ file.addEventListener('change', function(){
 //     }
 // }
 
-// function drawVisualiser(bufferLenght, x, barWidht, barHeight, dataArray){
-//     for (let i = 0; i < bufferLenght; i++){
-//         barHeight = dataArray[i] * 1.8;
-//         ctx.save();
-//         ctx.fillStyle = 'blue';
-//         ctx.beginPath();                    
-//         ctx.arc(x,  -barHeight + 500, 10, 1, Math.PI * 2);
-//         ctx.fill();
-//         x += barWidht;
-//         ctx.restore();
-//     }
-// }
-const optionsVisu = [drawVisuOp1, drawVisuOp2, drawVisuOp3, drawVisuOp4]
 
-document.getElementById('after').addEventListener('click', () => {
-    drawVisuOp1();
+// const optionsVisu = [drawVisuOp1, drawVisuOp2, drawVisuOp3, drawVisuOp4]
+
+// document.getElementById('after').addEventListener('click', () => {
+//     drawVisuOp1();
     
-})
+// })
 
